@@ -1,0 +1,30 @@
+"" Source your .vimrc
+"source ~/.vimrc
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
+
+" Do incremental searching.
+set incsearch
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+set nu
+set rnu
+
+sethandler <C-c> a:ide
+sethandler <C-v> i:ide
+sethandler <C-f> a:ide
+sethandler <C-r> i:ide
+sethandler <C-j> a:ide
+sethandler <C-k> a:ide
+sethandler <C-s> a:ide
+sethandler <C-a> a:ide
+sethandler <C-t> a:ide
+sethandler <C-w> a:ide
+
+inoremap <Home> <ESC>I
+nnoremap <Enter> o<ESC>
