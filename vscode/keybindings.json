@@ -188,5 +188,13 @@
         "key": "shift+f12",
         "command": "-goToPreviousReference",
         "when": "inReferenceSearchEditor || referenceSearchVisible"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "workbench.action.closeActiveEditor"
+    },
+    {
+        "key": "ctrl+f4",
+        "command": "-workbench.action.closeActiveEditor"
     }
 ]
