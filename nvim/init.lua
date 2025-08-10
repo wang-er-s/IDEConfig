@@ -1,7 +1,4 @@
-require("plugins.plugins-setup")
-require("core.options")
-require("core.keymaps")
-
-require("plugins.vscode_theme")
-require("plugins.lualine")
-require("plugins.nvim_tree")
+-- 需要cmake ripgrep
+require("core.basic")
+require("core.keymap")
+require("core.lazy")
