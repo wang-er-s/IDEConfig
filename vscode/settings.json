@@ -51,6 +51,14 @@
     {
       "before": ["<Enter>"],
       "after": ["<Esc>", "o", "<Esc>"]
+    },
+    {
+        "before": ["H"],
+        "after": ["^"]
+    },
+    {
+        "before": ["L"],
+        "after": ["$"]
     }
   ],
   "window.zoomLevel": 1,
