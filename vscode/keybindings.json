@@ -139,7 +139,7 @@
   },
   {
     "key": "ctrl+q",
-    "command": "workbench.action.togglePanel",
+    "command": "workbench.action.terminal.toggleTerminal",
     "when": "terminalFocus"
   },
   {
