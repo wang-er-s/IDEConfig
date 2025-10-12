@@ -1,190 +1,255 @@
-// Place your key bindings in this file to override the defaults
+// VSCode Keybindings
+// 从 Zed keymap.json 转换而来
+// 此配置覆盖 VSCode 默认行为以保持 Zed 编辑器使用习惯
+//
+// 使用方法：
+// 1. 复制此文件内容
+// 2. 在 VSCode 中按 Ctrl+Shift+P，输入 "Preferences: Open Keyboard Shortcuts (JSON)"
+// 3. 粘贴并保存
+//
+// 注意：此配置假设您已安装 VSCode Vim 插件（vscodevim.vim）
+
 [
-    // gd 找到引用
-    {
-        "command": "editor.action.goToTypeDefinition",
-        "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor",
-        "key": "gd"
-    },
-    // alt + enter 快速修复
-    {
-        "key": "ctrl+oem_period",
-        "command": "-editor.action.quickFix",
-        "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
-    },
-    {
-        "key": "alt+enter",
-        "command": "workbench.action.terminal.showQuickFixes",
-        "when": "terminalFocus"
-    },
-    {
-        "key": "ctrl+oem_period",
-        "command": "-workbench.action.terminal.showQuickFixes",
-        "when": "terminalFocus"
-    },
-    {
-        "key": "alt+enter",
-        "command": "acceptSelectedCodeAction",
-        "when": "codeActionMenuVisible"
-    },
-    {
-        "key": "ctrl+oem_period",
-        "command": "-acceptSelectedCodeAction",
-        "when": "codeActionMenuVisible"
-    },
-    {
-        "key": "alt+enter",
-        "command": "problems.action.showQuickFixes",
-        "when": "problemFocus"
-    },
-    {
-        "key": "ctrl+oem_period",
-        "command": "-problems.action.showQuickFixes",
-        "when": "problemFocus"
-    },
-    // ctrl j k行上下移动
-    {
-        "key": "ctrl+k",
-        "command": "editor.action.moveLinesUpAction",
-        "when": "editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "alt+up",
-        "command": "-editor.action.moveLinesUpAction",
-        "when": "editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "ctrl+j",
-        "command": "editor.action.moveLinesDownAction",
-        "when": "editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "alt+down",
-        "command": "-editor.action.moveLinesDownAction",
-        "when": "editorTextFocus && !editorReadonly"
-    },
-    // shift alt hjkl 拆分窗口
-    // alt hjkl 在窗口间移动
-    {
-        "key": "shift+alt+l",
-        "command": "workbench.action.splitEditorRight"
-    },
-    {
-        "key": "ctrl+k ctrl+oem_5",
-        "command": "-workbench.action.splitEditorRight"
-    },
-    {
-        "key": "shift+alt+j",
-        "command": "workbench.action.splitEditorDown"
-    },
-    {
-        "key": "ctrl+k ctrl+oem_5",
-        "command": "-workbench.action.splitEditorDown"
-    },
-    {
-        "key": "shift+alt+h",
-        "command": "workbench.action.splitEditorLeft"
-    },
-    {
-        "key": "ctrl+k ctrl+oem_5",
-        "command": "-workbench.action.splitEditorLeft"
-    },
-    {
-        "key": "shift+alt+k",
-        "command": "workbench.action.splitEditorUp"
-    },
-    {
-        "key": "ctrl+k ctrl+oem_5",
-        "command": "-workbench.action.splitEditorUp"
-    },
-    {
-        "key": "alt+h",
-        "command": "workbench.action.focusLeftGroup"
-    },
-    {
-        "key": "ctrl+k ctrl+left",
-        "command": "-workbench.action.focusLeftGroup"
-    },
-    {
-        "key": "alt+l",
-        "command": "workbench.action.focusRightGroup"
-    },
-    {
-        "key": "ctrl+k ctrl+right",
-        "command": "-workbench.action.focusRightGroup"
-    },
-    {
-        "key": "alt+k",
-        "command": "workbench.action.focusAboveGroup"
-    },
-    {
-        "key": "ctrl+k ctrl+up",
-        "command": "-workbench.action.focusAboveGroup"
-    },
-    {
-        "key": "alt+j",
-        "command": "workbench.action.focusBelowGroup"
-    },
-    {
-        "key": "ctrl+k ctrl+down",
-        "command": "-workbench.action.focusBelowGroup"
-    },
-    {
-        "key": "ctrl+r ctrl+r",
-        "command": "debug.renameWatchExpression",
-        "when": "watchExpressionsFocused"
-    },
-    {
-        "key": "f2",
-        "command": "-debug.renameWatchExpression",
-        "when": "watchExpressionsFocused"
-    },
-    {
-        "key": "ctrl+r ctrl+r",
-        "command": "renameFile",
-        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
-    },
-    {
-        "key": "f2",
-        "command": "-renameFile",
-        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
-    },
-    {
-        "key": "ctrl+r ctrl+r",
-        "command": "workbench.action.terminal.renameInstance",
-        "when": "terminalHasBeenCreated && terminalTabsFocus && terminalTabsSingularSelection || terminalProcessSupported && terminalTabsFocus && terminalTabsSingularSelection"
-    },
-    {
-        "key": "f2",
-        "command": "-workbench.action.terminal.renameInstance",
-        "when": "terminalHasBeenCreated && terminalTabsFocus && terminalTabsSingularSelection || terminalProcessSupported && terminalTabsFocus && terminalTabsSingularSelection"
-    },
-    {
-        "key": "ctrl+r ctrl+r",
-        "command": "editor.action.rename",
-        "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "f2",
-        "command": "-editor.action.rename",
-        "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "shift+f12",
-        "command": "-editor.action.goToReferences",
-        "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
-    },
-    {
-        "key": "shift+f12",
-        "command": "-goToPreviousReference",
-        "when": "inReferenceSearchEditor || referenceSearchVisible"
-    },
-    {
-        "key": "ctrl+w",
-        "command": "workbench.action.closeActiveEditor"
-    },
-    {
-        "key": "ctrl+f4",
-        "command": "-workbench.action.closeActiveEditor"
-    }
+  // ============================================
+  // 全局设置 - 禁用某些默认快捷键
+  // ============================================
+  {
+    "key": "ctrl-q",
+    "command": "-workbench.action.quit",
+    "when": "!terminalFocus && !sideBarFocus"
+  },
+
+  // ============================================
+  // Vim 风格 HJKL 面板导航（循环导航）
+  // h = 左, l = 右, j = 下, k = 上
+  // ============================================
+
+  // --- 从 Terminal 导航 ---
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.focusSideBar",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.focusAuxiliaryBar",
+    "when": "terminalFocus"
+  },
+
+  // --- 从 左侧 导航 ---
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.focusAuxiliaryBar",
+    "when": "sideBarFocus"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.terminal.focus",
+    "when": "sideBarFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "sideBarFocus"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.focusAuxiliaryBar",
+    "when": "sideBarFocus"
+  },
+
+  // --- 从 右侧 窗口导航 ---
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "auxiliaryBarFocus"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.focusSideBar",
+    "when": "auxiliaryBarFocus"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.terminal.focus",
+    "when": "auxiliaryBarFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.terminal.focus",
+    "when": "auxiliaryBarFocus"
+  },
+
+  // --- 从 Editor 导航（单编辑器）---
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.focusSideBar",
+    "when": "editorFocus && vim.mode != 'Insert' && !multipleEditorGroups"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.focusAuxiliaryBar",
+    "when": "editorFocus && vim.mode != 'Insert' && !multipleEditorGroups"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.terminal.focus",
+    "when": "editorFocus && vim.mode != 'Insert'"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.terminal.focus",
+    "when": "editorFocus && vim.mode != 'Insert'"
+  },
+
+  // --- 从 Editor 导航（多编辑器分屏）---
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.focusPreviousGroup",
+    "when": "editorFocus && vim.mode != 'Insert' && multipleEditorGroups"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.focusNextGroup",
+    "when": "editorFocus && vim.mode != 'Insert' && multipleEditorGroups"
+  },
+
+  // ============================================
+  // Terminal 功能快捷键
+  // ============================================
+  {
+    "key": "ctrl+n",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "workbench.action.terminal.kill",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+q",
+    "command": "workbench.action.togglePanel",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "shift+j",
+    "command": "workbench.action.terminal.focusPrevious",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "shift+k",
+    "command": "workbench.action.terminal.focusNext",
+    "when": "terminalFocus"
+  },
+
+  // ============================================
+  // 左侧窗口 功能快捷键
+  // ============================================
+  {
+    "key": "ctrl+w",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "sideBarFocus"
+  },
+  {
+    "key": "ctrl+q",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "sideBarFocus"
+  },
+
+  // ============================================
+  // 右侧窗口 功能快捷键
+  // ============================================
+  {
+    "key": "ctrl+w",
+    "command": "workbench.action.toggleAuxiliaryBar",
+    "when": "auxiliaryBarFocus"
+  },
+  {
+    "key": "ctrl+q",
+    "command": "workbench.action.toggleAuxiliaryBar",
+    "when": "auxiliaryBarFocus"
+  },
+  // cursor专用
+  {
+    "key": "ctrl+n",
+    "command": "composer.createNewComposerTab",
+    "when": "composerFocused || activeEditor == 'workbench.editor.composer' || focusedView =~ /^workbench.panel.aichat.view/"
+  },
+
+  // ============================================
+  // Editor 功能快捷键
+  // ============================================
+  {
+    "key": "ctrl+w",
+    "command": "workbench.action.closeActiveEditor",
+    "when": "editorFocus && vim.mode != 'Insert'"
+  },
+  {
+    "key": "shift+j",
+    "command": "workbench.action.previousEditor",
+    "when": "editorFocus && vim.mode != 'Insert'"
+  },
+  {
+    "key": "shift+k",
+    "command": "workbench.action.nextEditor",
+    "when": "editorFocus && vim.mode != 'Insert'"
+  },
+  {
+    "key": "ctrl+s",
+    "command": "workbench.action.files.save",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+z",
+    "command": "undo",
+    "when": "editorFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+f",
+    "command": "editor.action.startFindReplaceAction",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+a",
+    "command": "editor.action.selectAll",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+c",
+    "command": "editor.action.clipboardCopyAction",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+v",
+    "command": "editor.action.clipboardPasteAction",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "workbench.action.files.newUntitledFile",
+    "when": "editorFocus"
+  },
+  // ============================================
+  // 全局功能快捷键
+  // ============================================
+  {
+    "key": "ctrl+shift+f",
+    "command": "workbench.action.findInFiles"
+  },
+  {
+    "key": "ctrl+q",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "!terminalFocus && !sideBarFocus && editorFocus"
+  }
 ]

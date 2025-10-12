@@ -1,76 +1,192 @@
 {
-  "files.autoSave": "afterDelay",
-  "files.autoGuessEncoding": true,
-  "workbench.list.smoothScrolling": true,
+  // ============================================
+  // 编辑器核心设置
+  // ============================================
+  "editor.fontSize": 14,
+  "editor.fontFamily": "Maple Mono CN",
+  "editor.lineHeight": 1.6,
+  "editor.tabSize": 4,
+  "editor.lineNumbers": "relative",
+  "editor.mouseWheelZoom": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  // ============================================
+  // 编辑器视觉效果与动画
+  // ============================================
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.smoothScrolling": true,
   "editor.cursorBlinking": "smooth",
-  "editor.mouseWheelZoom": true,
-  "editor.formatOnPaste": true,
-  "editor.formatOnType": true,
-  "editor.formatOnSave": true,
+  "workbench.list.smoothScrolling": true,
+
+  // ============================================
+  // 编辑器功能增强
+  // ============================================
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.minimap.enabled": true,
+  "editor.minimap.autohide": true,
+  "editor.stickyScroll.enabled": false,
+  "breadcrumbs.enabled": false,
+
+  // ============================================
+  // 代码补全与建议
+  // ============================================
   "editor.suggest.snippetsPreventQuickSuggestions": false,
   "editor.acceptSuggestionOnEnter": "smart",
   "editor.suggestSelection": "recentlyUsed",
-  "window.dialogStyle": "custom",
-  "debug.showBreakpointsInOverviewRuler": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "workbench.iconTheme": "vscode-icons",
-  "window.commandCenter": false,
-  "editor.fontSize": 18,
-  "editor.lineNumbers": "relative",
 
-  // 代码报错
+  // ============================================
+  // 代码操作与格式化
+  // ============================================
   "editor.codeActionsOnSave": {
-    "source.fixAll": true // 保存自动修复
+    "source.fixAll": "explicit"
   },
 
-  // 折叠隐藏文件
-  "explorer.fileNesting.enabled": true,
-  "explorer.fileNesting.patterns": {
-    "pubspec.yaml": ".packages, pubspec.lock, .flutter-plugins, .flutter-plugins-dependencies, .metadata, analysis_options.yaml, dartdoc_options.yaml"
+  // ============================================
+  // 语言特定配置
+  // ============================================
+  "[typescript]": {
+    "editor.tabSize": 4,
+    "prettier.tabWidth": 8
+  },
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+  "[csharp]": {
+    "editor.defaultFormatter": "JetBrains.resharper-code"
   },
 
-  "commentTranslate.hover.enabled": true,
-
-  "editor.bracketPairColorization.enabled": true,
-  "editor.guides.bracketPairs": "active",
-
+  // ============================================
+  // Vim 插件配置
+  // ============================================
   "vim.easymotion": true,
   "vim.incsearch": true,
   "vim.useSystemClipboard": true,
   "vim.useCtrlKeys": true,
   "vim.leader": ",",
+  "vim.autoSwitchInputMethod.enable": true,
+
+  // 禁用 Vim 对特定按键的处理，让 VSCode 原生快捷键生效
   "vim.handleKeys": {
     "<C-a>": false,
     "<C-f>": false,
     "<C-w>": false,
-    "<C-c>": false
+    "<C-c>": false,
+    "<C-x>": false,
+    "<C-n>": false,
+    "<S-j>": false,
+    "<S-k>": false
   },
+
+  // Vim Normal 模式自定义快捷键
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": ["<Enter>"],
       "after": ["<Esc>", "o", "<Esc>"]
     },
     {
-        "before": ["H"],
-        "after": ["^"]
+      "before": ["L"],
+      "after": ["$"]
     },
     {
-        "before": ["L"],
-        "after": ["$"]
+      "before": ["H"],
+      "after": ["0", "w"]
     }
   ],
-  "window.zoomLevel": 1,
-  "[python]": {
-    "editor.defaultFormatter": "ms-python.python"
+
+  // ============================================
+  // 工作台外观
+  // ============================================
+  "workbench.colorTheme": "Default Dark Modern",
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.activityBar.orientation": "vertical",
+  "window.dialogStyle": "custom",
+  "window.commandCenter": false,
+
+  // ============================================
+  // 文件资源管理器
+  // ============================================
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "pubspec.yaml": ".packages, pubspec.lock, .flutter-plugins, .flutter-plugins-dependencies, .metadata, analysis_options.yaml, dartdoc_options.yaml"
   },
-  "python.formatting.provider": "none",
-  "python.defaultInterpreterPath": "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
-  "security.workspace.trust.untrustedFiles": "open",
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmPasteNative": false,
+  "files.autoGuessEncoding": true,
   "files.exclude": {
     "**/*.meta": true
   },
-  "C_Cpp.default.compilerPath": "C:\\MinGW\\bin\\gcc.exe",
-  "code-runner.runInTerminal": true
+
+  // ============================================
+  // 终端配置
+  // ============================================
+  "terminal.integrated.defaultProfile.windows": "Command Prompt",
+  "code-runner.runInTerminal": true,
+
+  // ============================================
+  // Git 版本控制
+  // ============================================
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+
+  // ============================================
+  // Python 开发配置
+  // ============================================
+  "python.createEnvironment.trigger": "off",
+  "python.terminal.activateEnvInCurrentTerminal": true,
+  "python.analysis.completeFunctionParens": true,
+  "python.analysis.autoFormatStrings": true,
+  "python.analysis.inlayHints.variableTypes": true,
+  "python.analysis.inlayHints.functionReturnTypes": true,
+  "python.analysis.inlayHints.pytestParameters": true,
+  "ruff.configuration": "",
+
+  // ============================================
+  // JavaScript/TypeScript 配置
+  // ============================================
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+
+  // ============================================
+  // Flutter/Dart 配置
+  // ============================================
+  "dart.flutterSdkPath": "C:\\Tools\\flutter",
+
+  // ============================================
+  // Markdown 配置
+  // ============================================
+  "markdown-preview-enhanced.enablePreviewZenMode": true,
+  "markdownConverter.Document.HeaderTemplate": "",
+
+  // ============================================
+  // 调试配置
+  // ============================================
+  "debug.showBreakpointsInOverviewRuler": true,
+
+  // ============================================
+  // 扩展与插件
+  // ============================================
+  "commentTranslate.hover.enabled": true,
+  "remote.extensionKind": {
+    "GitHub.copilot": ["ui"],
+    "github.copilot-chat": ["ui"]
+  },
+
+  // ============================================
+  // 安全与信任设置
+  // ============================================
+  "security.workspace.trust.untrustedFiles": "open",
+  "security.workspace.trust.enabled": false,
+
+  // ============================================
+  // 更新与版本管理
+  // ============================================
+  "update.releaseTrack": "prerelease",
+  "update.mode": "none",
+
+  // ============================================
+  // Cursor 专用配置
+  // ============================================
+  "cursor-infinity.autoOpenPanel": true
 }
